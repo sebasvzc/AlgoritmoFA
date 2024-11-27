@@ -95,7 +95,7 @@ class Enjambre {
 
         for (int mes = 0; mes < meses; ++mes) {
             double aguaTotalRequerida = calcularAguaTotalRequerida(luciernaga, numeroCultivos, mes, cultivacion.areaTotalDisponible, cultivacion.requerimientoAgua);
-            double coeficienteAgua = calcularCoeficienteAgua(aguaTotalRequerida, cultivacion.aguaInicialDisponible[mes]);
+            double coeficienteAgua = calcularCoeficienteAgua(aguaTotalRequerida, aguaDisponible[mes]);
             double cosechaMensual = calcularCosechaCultivo(luciernaga, numeroCultivos, mes, cultivacion.areaTotalDisponible,
                                                            coeficienteAgua, conductividadElectrica, cultivacion.mesesCultivo,
                                                            cultivacion.maxCosechaPorArea, cultivacion.susceptibilidadAgua, cultivacion.reduccionRendimiento, cultivacion.salinidadCritica);
