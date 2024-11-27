@@ -43,13 +43,13 @@ int main() {
                                                                  numeroCultivos, meses,
                                                                  cultivacion);
                     // Revertir si la nueva posicion es peor
-                    if (nuevoValor > enjambre.valoresObjetivo[i])
+                    if (nuevoValor < enjambre.valoresObjetivo[i])
                         enjambre.luciernagas[i] = luciernagaOriginal;
                     else  // Actualizar el valor objetivo de lo contrario
                         enjambre.valoresObjetivo[i] = nuevoValor;
 
                 } else {
-                    if (enjambre.valoresObjetivo[j] < enjambre.valoresObjetivo[i]) {
+                    if (enjambre.valoresObjetivo[j] > enjambre.valoresObjetivo[i]) {
                         double distancia = enjambre.calcularDistancia(enjambre.luciernagas[i],
                                                                       enjambre.luciernagas[j]);
                         double beta = enjambre.calcularAtractivo(distancia);
@@ -62,7 +62,7 @@ int main() {
             }
         }
         Luciernaga luciernagaActualMejor = enjambre.encontrarMejorLuciernaga();
-        if (luciernagaActualMejor.valorObjetivo < mejorValor) {
+        if (luciernagaActualMejor.valorObjetivo > mejorValor) {
             mejorLuciernaga = luciernagaActualMejor;
             mejorValor = luciernagaActualMejor.valorObjetivo;
         }

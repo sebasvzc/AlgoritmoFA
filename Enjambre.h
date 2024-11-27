@@ -109,7 +109,7 @@ class Enjambre {
             cosechaTotal += cosechaMensual;
         }
 
-        return -cosechaTotal;
+        return cosechaTotal;
     }
 
     void actualizarValorObjetivo(size_t indice, int numeroCultivos, int meses, Cultivacion& cultivacion) {
@@ -246,7 +246,7 @@ class Enjambre {
         double mejorValor = valoresObjetivo[0];
 
         for (size_t i = 1; i < luciernagas.size(); ++i) {
-            if (valoresObjetivo[i] < mejorValor) {
+            if (valoresObjetivo[i] > mejorValor) {
                 mejorLuciernaga = luciernagas[i];
                 mejorValor = valoresObjetivo[i];
             }
